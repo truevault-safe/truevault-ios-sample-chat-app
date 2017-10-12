@@ -1,0 +1,18 @@
+PODS:
+  - Alamofire (4.5.1)
+  - Eureka (4.0.1)
+  - MessageKit (0.8.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5)
+  - Eureka (~> 4.0.0)
+  - MessageKit (= 0.8.1)
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Eureka: c8bd5cc07143b6f66268c208d28a246c99b41955
+  MessageKit: ff3eaa2eed58ac021467b8e2184cb48178961cd0
+
+PODFILE CHECKSUM: e6e33dcf52637e0309c940074fbfc43b1ef2f78f
+
+COCOAPODS: 1.3.1

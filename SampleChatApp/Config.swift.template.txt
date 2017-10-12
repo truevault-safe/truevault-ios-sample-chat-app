@@ -1,0 +1,5 @@
+let CHAT_SERVER_ENDPOINT = "http://localhost:3000"
+let VAULT_ID = ""
+let TRUEVAULT_ACCOUNT_ID = ""
+let REGISTRATION_USER_API_KEY = ""
+let USER_GROUP_ID = ""
