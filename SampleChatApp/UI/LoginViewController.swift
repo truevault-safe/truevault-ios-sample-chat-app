@@ -33,7 +33,9 @@ class LoginViewController: FormViewController {
     }
     
     func login() {
-        TrueVaultClient.login(accountId: TRUEVAULT_ACCOUNT_ID, username: self.username, password: self.password) { response in
+        let notValidAfter = Date().addingTimeInterval(365 * 24 * 60 * 60)
+        
+        TrueVaultClient.login(accountId: TRUEVAULT_ACCOUNT_ID, username: self.username, password: self.password, notValidAfter: notValidAfter) { response in
             if response.result.isFailure {
                 let alert = UIAlertController(title: nil, message: "Unable to login", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
