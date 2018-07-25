@@ -1,8 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
-fetch = require('node-fetch');
-atob = require('atob');
 const TrueVaultClient = require('truevault');
 const app = express();
 const sqlite3 = require('sqlite3').verbose();

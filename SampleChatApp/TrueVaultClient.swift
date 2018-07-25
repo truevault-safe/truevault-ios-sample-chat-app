@@ -192,11 +192,15 @@ public class TrueVaultClient {
         self.accessToken = accessToken
     }
     
-    class func login(accountId: String, username: String, password: String, completionHandler: @escaping ((DataResponse<User>) -> Void)) {
+    class func login(accountId: String, username: String, password: String, notValidAfter: Date, completionHandler: @escaping ((DataResponse<User>) -> Void)) {
+        let formattedDate = ISO8601DateFormatter.string(from: notValidAfter, timeZone: TimeZone.init(identifier: "UTC")!, formatOptions: [.withInternetDateTime, .withFractionalSeconds])
+
+        
         Alamofire.request("https://api.truevault.com/v1/auth/login", method: .post, parameters: [
             "account_id": accountId,
             "username": username,
-            "password": password
+            "password": password,
+            "not_valid_after": formattedDate
             ]).responseObject { (response: DataResponse<User>) in
                 DispatchQueue.main.async {
                     completionHandler(response)
